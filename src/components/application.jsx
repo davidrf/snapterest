@@ -1,6 +1,6 @@
 var React = require('react');
 var Stream = require('./stream.jsx');
-// var Collection = require('./collection.jsx');
+var Collection = require('./collection.jsx');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -34,13 +34,13 @@ module.exports = React.createClass({
           <Stream onAddTweetToCollection={this.addTweetToCollection} />
         </div>
         <div className="col-md-8 text-center">
+          <Collection
+            tweets={this.state.collectionTweets}
+            onRemoveTweetFromCollection={this.removeTweetFromCollection}
+            onRemoveAllTweetsFromCollection={this.removeAllTweetsFromCollection}
+          />
         </div>
       </div>
     );
   }
 });
-// <Collection
-  // tweets={this.state.collectionTweets}
-  // onRemoveTweetFromCollection={this.removeTweetFromCollection}
-  // onRemoveAllTweetsFromCollection={this.removeAllTweetsFromCollection}
-// />

@@ -43,7 +43,7 @@ module.exports = React.createClass({
 
     return(
       <div style={tweetStyle}>
-        <img src={tweetMediaUrl} onClick={this.handleImageClick} />
+        <img src={tweetMediaUrl} onClick={this.handleImageClick} style={imageStyle} />
       </div>
     );
   }
