@@ -32,7 +32,7 @@ module.exports = React.createClass({
     return <li style={listItemStyle} key={tweet.id}>{tweetElement}</li>;
   },
   render: function() {
-    var tweetElements = this.getListOfTweetIds.map(this.getTweetElement);
+    var tweetElements = this.getListOfTweetIds().map(this.getTweetElement);
 
     return(
       <ul style={listStyle}>

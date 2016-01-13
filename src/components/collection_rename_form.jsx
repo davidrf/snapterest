@@ -14,7 +14,7 @@ module.exports = React.createClass({
     };
   },
 
-  setIntpuValue: function(inputValue) {
+  setInputValue: function(inputValue) {
     this.setState({
       inputValue: inputValue
     });

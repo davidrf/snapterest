@@ -4,7 +4,7 @@ var buttonStyle = {
   margin: '10px 10px 10px 0'
 };
 
-var Button = React.createClass({
+module.exports = React.createClass({
   render: function() {
     return(
       <button
