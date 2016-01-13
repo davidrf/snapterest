@@ -51,21 +51,21 @@ module.exports = React.createClass({
           onCancelCollectionNameChange={this.toggleEditCollectionName}
         />
       );
-    } else {
-      return(
-        <div>
-          <Header text={this.getHeaderText()} />
-          <Button
-            label="Rename collection"
-            handleClick={this.toggleEditCollectionName} />
-
-          <Button
-            label="Empty collection"
-            handleClick={this.props.onRemoveAllTweetsFromCollection} />
-
-          <CollectionExportForm htmlMarkup={this.props.htmlMarkup} />
-        </div>
-      );
     }
+
+    return(
+      <div>
+        <Header text={this.getHeaderText()} />
+        <Button
+          label="Rename collection"
+          handleClick={this.toggleEditCollectionName} />
+
+        <Button
+          label="Empty collection"
+          handleClick={this.props.onRemoveAllTweetsFromCollection} />
+
+        <CollectionExportForm htmlMarkup={this.props.htmlMarkup} />
+      </div>
+    );
   }
 });
