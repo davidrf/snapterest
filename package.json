@@ -20,14 +20,23 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "flux": "^2.1.1",
+    "object-assign": "^4.0.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "snapkite-stream-client": "^1.0.3"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["es6", "js", "jsx"],
-    "moduleFileExtensions": ["js", "jsx"],
+    "testFileExtensions": [
+      "es6",
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/fbjs"
