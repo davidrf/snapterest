@@ -1,5 +1,5 @@
 var AppDispatcher = require('../dispatcher/app_dispatcher.jsx');
-var EventEmmitter = require('events').EventEmitter;
+var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
 var tweet = null;
@@ -34,5 +34,4 @@ function handleAction(action) {
 }
 
 TweetStore.dispatchToken = AppDispatcher.register(handleAction);
-
 module.exports = TweetStore;

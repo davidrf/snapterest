@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.jsx');
 var Button = require('./button.jsx');
+var CollectionActionCreators = require('../actions/collection_action_creator.jsx');
+var CollectionStore = require('../stores/collection_store.jsx');
 
 var inputStyle = {
   marginRight: '5px'
@@ -10,7 +12,7 @@ var inputStyle = {
 module.exports = React.createClass({
   getInitialState: function() {
     return {
-      inputValue: this.props.name
+      inputValue: CollectionStore.getCollectionName()
     };
   },
 
@@ -29,13 +31,14 @@ module.exports = React.createClass({
     event.preventDefault();
 
     var collectionName = this.state.inputValue;
-    this.props.onChangeCollectionName(collectionName);
+    CollectionActionCreators.setCollectionName(collectionName);
+    this.props.onCancelCollectionNameChange();
   },
 
   handleFormCancel: function(event) {
     event.preventDefault();
 
-    var collectionName = this.props.name;
+    var collectionName = CollectionStore.getCollectionName();
     this.setInputValue(collectionName);
     this.props.onCancelCollectionNameChange();
   },

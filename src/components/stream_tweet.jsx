@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./header.jsx');
 var Tweet = require('./tweet.jsx');
+var CollectionActionCreators = require('../actions/collection_action_creator.jsx');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -69,6 +70,9 @@ module.exports = React.createClass({
     console.log('[Snapterest] StreamTweet: 8. Running componentWillUnmount()');
     delete window.snapterest;
   },
+  addTweetToCollection: function(tweet) {
+    CollectionActionCreators.addTweetToCollection(tweet);
+  },
   render: function() {
     console.log('[Snapterest] StreamTweet: Running render()');
     return (
@@ -76,7 +80,7 @@ module.exports = React.createClass({
         <Header text={this.state.headerText} />
         <Tweet
           tweet={this.props.tweet}
-          onImageClick={this.props.onAddTweetToCollection}
+          onImageClick={this.addTweetToCollection}
         />
       </section>
     );
